@@ -1,4 +1,4 @@
-package com.avisper.mvvm.sampleapp.newsapi.network
+package com.avisper.mvvm.sampleapp.newsapi.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response

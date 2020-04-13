@@ -1,5 +1,6 @@
 package com.avisper.mvvm.sampleapp.newsapi.network
 
+import com.avisper.mvvm.sampleapp.newsapi.network.interceptor.ApiKeyInterceptor
 import java.util.concurrent.Executors
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -33,7 +34,8 @@ object RetrofitClient {
             .build()
     }
 
-    private fun buildApiKeyInterceptor() = ApiKeyInterceptor()
+    private fun buildApiKeyInterceptor() =
+        ApiKeyInterceptor()
 
 
     private fun buildLoggingInterceptor(): HttpLoggingInterceptor {
