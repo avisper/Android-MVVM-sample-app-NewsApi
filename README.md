@@ -1,5 +1,4 @@
-# Android-MVVM-sample-app-NewsApi #
-
+# Android-MVVM-sample-app-NewsApi
 ### A basic sample android application to understand MVVM in a very simple way.
 
 ## Description
@@ -7,7 +6,7 @@
 - Retrieves data from The News API
 - Save the articles on the device
 
-## Stack:
+## Stack
 - **Kotlin**
 - **Kotlin Coroutines** - for multithreading
 - **Retrofit 2** - API Requests
