@@ -10,7 +10,7 @@ class ApiKeyInterceptor : Interceptor {
         val originalHttpUrl = original.url
 
         val url = originalHttpUrl.newBuilder()
-            .addQueryParameter("apiKey", "779ee1d0337946338ce6d86d1dffaf40")
+            .addQueryParameter("apiKey", "API_KEY")
             .build()
 
         // Request customization: add request headers
