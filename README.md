@@ -2,8 +2,7 @@
 ### A basic sample android application to understand MVVM in a very simple way.
 
 ## Description
-- Get the latest news around the world 
-- Retrieves data from The News API
+- Get the latest news around the world from [NewsAPI.org](https://newsapi.org).
 - Save the articles on the device
 
 ## Stack
