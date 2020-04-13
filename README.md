@@ -1,4 +1,4 @@
-"# Android-MVVM-sample-app-NewsApi" 
+# Android-MVVM-sample-app-NewsApi #
 
 ### A basic sample android application to understand MVVM in a very simple way.
 
