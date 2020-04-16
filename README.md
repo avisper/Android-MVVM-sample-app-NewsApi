@@ -8,6 +8,7 @@
 ## Stack
 - **Kotlin**
 - **Kotlin Coroutines** - for multithreading
+- **Koin** - as DI
 - **Retrofit 2** - API Requests
 - **Room** - wrapper over SQLite
 - **Unit testing**
