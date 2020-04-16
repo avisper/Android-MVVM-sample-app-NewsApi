@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.lang.Exception
 
-interface NewsRepo : IRepository {
+interface NewsRepo {
     val articles: LiveData<List<ArticleModel>>
 
     suspend fun loadHeadlinesByCategory(category: eCategory)

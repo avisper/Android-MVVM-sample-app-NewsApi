@@ -1,4 +1,4 @@
-package com.avisper.mvvm.sampleapp.newsapi.db.util
+package com.avisper.mvvm.sampleapp.newsapi.db.utils
 
 import androidx.room.TypeConverter
 import java.util.Date

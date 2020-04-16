@@ -10,17 +10,17 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
 
-interface IMainViewModel {
+interface NewsViewModel {
     val articles: LiveData<List<ArticleModel>>
     val uiState: LiveData<UiState>
 
     fun loadHeadlines(category: eCategory)
 }
 
-class NewsViewModel(private val repo: NewsRepo) : ViewModel(), IMainViewModel {
+class NewsViewModelImpl(private val repo: NewsRepo) : ViewModel(), NewsViewModel {
 
     companion object {
-        val TAG = NewsViewModel::class.java.simpleName
+        val TAG = NewsViewModelImpl::class.java.simpleName
     }
 
     override val articles = repo.articles

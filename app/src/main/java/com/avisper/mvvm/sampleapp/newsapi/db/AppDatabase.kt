@@ -5,8 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.avisper.mvvm.sampleapp.newsapi.db.util.Converters
-import com.avisper.mvvm.sampleapp.newsapi.db.util.DBConstants.DB_NAME
+import com.avisper.mvvm.sampleapp.newsapi.db.utils.Converters
+import com.avisper.mvvm.sampleapp.newsapi.db.utils.DBConstants.DB_NAME
 
 @Database(
     entities = [ArticleEntity::class],

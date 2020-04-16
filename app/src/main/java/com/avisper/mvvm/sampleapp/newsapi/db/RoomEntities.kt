@@ -3,7 +3,7 @@ package com.avisper.mvvm.sampleapp.newsapi.db
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.avisper.mvvm.sampleapp.newsapi.db.util.DBConstants
+import com.avisper.mvvm.sampleapp.newsapi.db.utils.DBConstants
 import com.avisper.mvvm.sampleapp.newsapi.network.response.ArticleModel
 import java.util.Date
 

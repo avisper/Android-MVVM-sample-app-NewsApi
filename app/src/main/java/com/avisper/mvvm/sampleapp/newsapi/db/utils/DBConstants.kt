@@ -1,4 +1,4 @@
-package com.avisper.mvvm.sampleapp.newsapi.db.util
+package com.avisper.mvvm.sampleapp.newsapi.db.utils
 
 object DBConstants {
     const val DB_NAME = "com.avisper.mvvm.sampleapp.newsapi.app_db"

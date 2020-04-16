@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
 import androidx.room.Transaction
-import com.avisper.mvvm.sampleapp.newsapi.db.util.DBConstants.ARTICLES_TABLE_NAME
+import com.avisper.mvvm.sampleapp.newsapi.db.utils.DBConstants.ARTICLES_TABLE_NAME
 
 @Dao
 abstract class ArticlesDAO {

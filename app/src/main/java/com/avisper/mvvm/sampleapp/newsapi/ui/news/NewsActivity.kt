@@ -6,26 +6,22 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.avisper.mvvm.sampleapp.newsapi.R
 import com.avisper.mvvm.sampleapp.newsapi.enums.eCategory
-import com.avisper.mvvm.sampleapp.newsapi.app.ViewModelFactory
-import com.avisper.mvvm.sampleapp.newsapi.db.AppDatabase
-import com.avisper.mvvm.sampleapp.newsapi.network.RetrofitClient
 import com.avisper.mvvm.sampleapp.newsapi.network.response.ArticleModel
-import com.avisper.mvvm.sampleapp.newsapi.network.service.NewsApiService
-import com.avisper.mvvm.sampleapp.newsapi.repository.NewsRepoImpl
 import com.avisper.mvvm.sampleapp.newsapi.ui.base.IBaseView
 import com.avisper.mvvm.sampleapp.newsapi.ui.web.WebActivity
 import com.avisper.mvvm.sampleapp.newsapi.utils.IOnUiStateChanged
 import com.avisper.mvvm.sampleapp.newsapi.utils.UiState
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class NewsActivity : AppCompatActivity(), IBaseView, IOnUiStateChanged {
 
-    private lateinit var newsViewModel: NewsViewModel
+    private val newsViewModel: NewsViewModelImpl by viewModel()
 
     private lateinit var articleAdapter: ArticleAdapter
 
@@ -34,16 +30,8 @@ class NewsActivity : AppCompatActivity(), IBaseView, IOnUiStateChanged {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initViewModel()
         initView()
         initObservers()
-    }
-
-    override fun initViewModel() {
-        val apiService = RetrofitClient.instance.create(NewsApiService::class.java)
-        val dao = AppDatabase.create(applicationContext).articlesDao()
-        val viewModelFactory = ViewModelFactory(NewsRepoImpl(apiService, dao))
-        newsViewModel = ViewModelProvider(this, viewModelFactory).get(NewsViewModel::class.java)
     }
 
 
@@ -70,18 +58,18 @@ class NewsActivity : AppCompatActivity(), IBaseView, IOnUiStateChanged {
 
 
     override fun initObservers() {
-        newsViewModel.articles.observe(
-            this@NewsActivity,
-            Observer { articles ->
-                articleAdapter.submitList(articles)
-            })
+        newsViewModel.apply {
+            articles.observe(
+                this@NewsActivity,
+                Observer { articles ->
+                    articleAdapter.submitList(articles)
+                })
 
-        newsViewModel
-            .uiState
-            .observe(
-                this,
+            uiState.observe(
+                this@NewsActivity,
                 Observer(::onUiStateChanged)
             )
+        }
     }
 
     private fun openArticle(articleModel: ArticleModel) {
